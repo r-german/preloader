@@ -1,0 +1,210 @@
+<!-- Кастомный прелоадер (эффект загрузки страницы) | https://necodim.ru/tilda/preloader -->
+
+<div id="preloader"><img class="preloader__img" src="https://static.tildacdn.com/tild3066-3434-4964-b937-386136653365/logo_1.svg" alt=""><div class="preloader__text"><p><span>Н</span><span>е</span><span>Б</span><span>а</span><span>х</span><span>р</span><span>о</span><span>м</span><span>а</span></p><p><span>Н</span><span>е</span><span>Б</span><span>а</span><span>х</span><span>р</span><span>о</span><span>м</span><span>а</span></p></div></div>
+
+<script>
+document.body.style.overflow = 'hidden';
+const loader = () => {
+    document.body.style.overflow = '';
+    const preloader = document.getElementById('preloader');
+    const fadeout = setInterval(() => {
+        const opacity = getComputedStyle(preloader).opacity;
+        opacity > 0 ? preloader.style.opacity = opacity - 0.05 : (clearInterval(fadeout), preloader.remove());
+    }, 15);
+}
+const necodimLoadingArray = new Array();
+const necodimPageReady = () => {
+    let conditionDom = necodimLoadingArray.indexOf('dom') !== -1;
+    let conditionShop = document.querySelectorAll('.js-store-grid-cont').length ? necodimLoadingArray.indexOf('store') !== -1 : true;
+    let conditionZero = document.querySelectorAll('.t396__artboard').length ? necodimLoadingArray.indexOf('zero') !== -1 : true;
+    conditionDom && conditionShop && conditionZero ? loader() : false;
+}
+document.addEventListener('DOMContentLoaded', () => (necodimLoadingArray.push('dom'), necodimPageReady()));
+document.querySelectorAll('.js-store-grid-cont').forEach(catalogGrid => catalogGrid.addEventListener('tStoreRendered', () => (necodimLoadingArray.push('store'), necodimPageReady())));
+document.querySelectorAll('.t396__artboard').forEach(artBoard => artBoard.addEventListener('artBoardRendered', () => (necodimLoadingArray.push('zero'), necodimPageReady())));
+</script>
+
+<style>
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    opacity: 1;
+    background-color: #222222;
+    overflow: hidden;
+    cursor: progress;
+}
+#preloader .preloader__img {
+  width: 100px;
+  margin-bottom: 40px;
+  animation: imgRotation 1.5s linear infinite;
+}
+@keyframes imgRotation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+#preloader .preloader__text {
+  display: grid;
+}
+#preloader .preloader__text p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+#preloader .preloader__text p:first-child {
+  color: white;
+}
+#preloader .preloader__text p:last-child span {
+  color: #eead5f;
+  opacity: 0;
+}
+#preloader .preloader__text p:last-child span:first-child, #preloader .preloader__text p:last-child span:nth-child(2) {
+  animation: span1 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(3) {
+  animation: span2 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(4) {
+  animation: span3 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(5) {
+  animation: span4 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(6) {
+  animation: span5 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(7) {
+  animation: span6 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:nth-child(8) {
+  animation: span7 3s linear infinite;
+}
+#preloader .preloader__text p:last-child span:last-child {
+  animation: span8 3s linear infinite;
+}
+@keyframes span1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span3 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span4 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span5 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span6 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span7 {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes span8 {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
