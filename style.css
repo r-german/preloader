@@ -1,14 +1,14 @@
 .loader {
   width: 100px;
   height: 100px;
-  background: url("https://static.tildacdn.com/tild6561-6561-4364-a633-313432366239/3279462667fb3498a6aa.gif") center/cover no-repeat;
+  background: url("https://static.tildacdn.com/tild3066-3434-4964-b937-386136653365/logo_1.svg") center/cover no-repeat;
   animation: rotation 1.5s linear infinite;
 }
 @keyframes rotation {
   0% {
-    transform: rotate(0deg);
+    transform: rotateY(10deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotateY(370deg);
   }
 }
