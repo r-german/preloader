@@ -3,6 +3,7 @@
   height: 100px;
   background: url("https://static.tildacdn.com/tild3066-3434-4964-b937-386136653365/logo_1.svg") center/cover no-repeat;
   animation: rotation 1.5s linear infinite;
+  will-change: transform;
   transform: translate3d(0, 0, 0) rotateY(10deg);
 }
 @keyframes rotation {
