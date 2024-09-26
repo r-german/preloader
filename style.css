@@ -9,7 +9,10 @@
   0% {
     transform: translate3d(0, 0, 0) rotateY(0deg);
   }
-  100% {
+  50% {
     transform: translate3d(0, 0, 0) rotateY(180deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
   }
 }
