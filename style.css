@@ -4,13 +4,14 @@
   background: url("https://static.tildacdn.com/tild3066-3434-4964-b937-386136653365/logo_1.svg") center/cover no-repeat;
   animation: rotation 1.5s linear infinite;
   will-change: transform;
-  transform: translate3d(0, 0, 0) rotateY(10deg);
+  transform: translateZ(0) rotateY(10deg);
 }
 @keyframes rotation {
   0% {
-    transform: translate3d(0, 0, 0) rotateY(10deg);
+    will-change: transform;
+    transform: translateZ(0) rotateY(1deg);
   }
   100% {
-    transform: translate3d(0, 0, 0) rotateY(370deg);
+    transform: translateZ(0) rotateY(361deg);
   }
 }
